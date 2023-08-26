@@ -10,7 +10,7 @@ namespace Infrastracture.Helpers
     {
         public void OnAuthorization(AuthorizationFilterContext filterContext)
         {
-            var user = (User)filterContext.HttpContext.Items["User"];
+            User user = (User)filterContext.HttpContext.Items["user"];
 
             if (user == null)
             {

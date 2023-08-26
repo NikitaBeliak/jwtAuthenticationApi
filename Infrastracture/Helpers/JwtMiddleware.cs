@@ -48,7 +48,7 @@ namespace Infrastracture.Helpers
                 var idUsers = int.Parse(jwtToken.Claims.First(x => x.Type == "idUsers").Value);
 
                 // attach user to context on successful jwt validation
-                context.Items["User"] = userService.GetUser(idUsers);
+                context.Items["user"] = userService.GetUser(idUsers);
             }
             catch
             {

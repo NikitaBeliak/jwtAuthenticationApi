@@ -53,7 +53,7 @@ namespace Infrastracture.Repository
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("idUsers", user.idUsers.ToString()) }),
+                Subject = new ClaimsIdentity(new Claim[] { new Claim("idUsers", user.idUsers.ToString()) }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };

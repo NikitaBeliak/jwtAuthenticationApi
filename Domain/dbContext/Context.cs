@@ -16,7 +16,8 @@ namespace Domain.dbContext
             modelBuilder.Entity<User>(e =>
             {
                 e.HasKey(x => x.idUsers).HasName("idUsers");
-                e.ToTable("User");
+                e.ToTable("user");
+                e.Property(x => x.idUsers).HasColumnName("idUsers");
                 e.Property(x => x.Username).HasColumnName("Username");
                 e.Property(x => x.FirstName).HasColumnName("FirstName");
                 e.Property(x => x.LastName).HasColumnName("LastName");
